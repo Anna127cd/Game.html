@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <title>Car Pixel Run — Skins + Movimiento</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="hud">
+      <div class="block">
+        <span class="label">Puntos</span>
+        <span id="score" class="value">0</span>
+      </div>
+      <div class="block">
+        <span class="label">Velocidad</span>
+        <span id="speed" class="value">1.0x</span>
+      </div>
+      <div class="block">
+        <span class="label">Vidas</span>
+        <span id="lives" class="value">3</span>
+      </div>
+    </header>
+
+    <main class="game">
+      <canvas id="game" width="240" height="320" aria-label="Juego de carros (canvas)"></canvas>
+
+      <div class="overlay" id="overlay">
+        <h1 id="title">CAR PIXEL RUN</h1>
+        <p id="subtitle">Elige un skin, ¡y corre! Movimiento suave con derrape.</p>
+
+        <div class="card">
+          <h2>Skins</h2>
+          <div class="skins" id="skins">
+            <!-- Cada botón representa una paleta -->
+            <button class="skin-btn selected" data-skin="sky">
+              <span class="swatch" style="--c1:#49b6ff;--c2:#2b6bb0"></span> Sky
+            </button>
+            <button class="skin-btn" data-skin="sunset">
+              <span class="swatch" style="--c1:#ff7e67;--c2:#b23c3c"></span> Sunset
+            </button>
+            <button class="skin-btn" data-skin="lime">
+              <span class="swatch" style="--c1:#7cff5b;--c2:#3b7c2f"></span> Lime
+            </button>
+            <button class="skin-btn" data-skin="violet">
+              <span class="swatch" style="--c1:#b78cff;--c2:#6b4fb8"></span> Violet
+            </button>
+            <button class="skin-btn" data-skin="gold">
+              <span class="swatch" style="--c1:#ffc857;--c2:#b78627"></span> Gold
+            </button>
+            <button class="skin-btn" data-skin="mint">
+              <span class="swatch" style="--c1:#6ef5cf;--c2:#2aa58d"></span> Mint
+            </button>
+          </div>
+          <p class="note">Puedes cambiar de skin en cualquier momento (pausa con <b>Espacio</b>).</p>
+        </div>
+
+        <div class="card">
+          <h2>Controles</h2>
+          <ul>
+            <li><b>← →</b> o <b>A / D</b>: moverte entre carriles (ahora con transición suave)</li>
+            <li><b>Espacio</b>: Pausar / Reanudar</li>
+            <li><b>R</b>: Reiniciar</li>
+          </ul>
+          <p>En móvil: usa los botones.</p>
+        </div>
+
+        <button id="startBtn" class="btn">Jugar</button>
+      </div>
+
+      <div class="touch">
+        <button id="leftBtn" aria-label="Izquierda">◀</button>
+        <button id="pauseBtn" aria-label="Pausa">⏸</button>
+        <button id="rightBtn" aria-label="Derecha">▶</button>
+      </div>
+    </main>
+
+    <footer class="tips">
+      <span>Consejo: recoge monedas para subir la velocidad y el marcador.</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
